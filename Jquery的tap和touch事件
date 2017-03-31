@@ -1,0 +1,1 @@
+前言，在移动端给按钮绑定tap事件，事件内容是弹出一个蒙层，而该蒙层上面绑定了click事件关闭蒙层，当点击tap按钮时，先弹出蒙层，300ms后，会触发最上层DOM元素的click事件，所以蒙层会立即关闭。原因：tab事件是由原生事件touchstart,touchmove,touchend组合实现的，而tab事件在touchend后300ms后会穿透触发click事件。解决方案，参考：https://segmentfault.com/a/1190000003848737
